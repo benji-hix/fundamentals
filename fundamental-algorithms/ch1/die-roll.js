@@ -9,44 +9,47 @@ function diceRoll() {
 
 function rollsAnalysis(obj) {
     let min = Object.values(obj)[0];
-    let leastRolled = [];
     let max = Object.values(obj)[0];
-    let mostRolled = [];
-    let unrolled = [];
+    const leastRolled = [];
+    const mostRolled = [];
+    const unrolled = [];
 
     for (const key in obj) {
-        // Track unrolled numbers
+        // Unrolled numbers
         if (obj[key] == 0) {
             unrolled.push(key);
             continue;
         }
-        //Track least rolled number
-        else if (obj[key] < min) {
+        
+        // Least rolled number(s)
+        if (obj[key] < min) {
             min = obj[key];
             leastRolled.length = 1; // override previous tie
             leastRolled[0] = key;
-        }
-        // Track 'ties'
-        else if (obj[key] == min) {
+        } else if (obj[key] == min) {
             leastRolled.push(key);
         }
+
+        // Most rolled number(s)
         if (obj[key] > max) {
             max = obj[key];
             mostRolled.length = 1; // override previous tie
             mostRolled[0] = key;
-        }
-        // Track 'ties'
-        else if (obj[key] == max) {
+        } else if (obj[key] == max) {
             mostRolled.push(key);
         }
     }
 
-    // Don't print if it's a complete tie for 'least rolled'
-    if (mostRolled.length && mostRolled.length + unrolled.length != 6)
+    // Don't print if it's a complete tie for most/least rolled
+    if (mostRolled.length && mostRolled.length + unrolled.length != 6) {
         console.log('Most rolled: ' + mostRolled);
-    if (leastRolled.length && leastRolled.length + unrolled.length != 6)
+    }
+    if (leastRolled.length && leastRolled.length + unrolled.length != 6) {
         console.log('Least rolled: ' + leastRolled);
-    if (unrolled.length >= 1) console.log('Unrolled: ' + unrolled);
+    }
+    if (unrolled.length) {
+        console.log('Unrolled: ' + unrolled);
+    }
 }
 
 function rollDoubles() {
@@ -59,7 +62,7 @@ function rollDoubles() {
         6: 0,
     };
     let rollCount = 0;
-    let match
+    let match;
 
     while (true) {
         rollCount++;
@@ -70,12 +73,12 @@ function rollDoubles() {
         if (diceA == diceB) {
             match = diceA;
             break;
-        } 
+        }
     }
 
     console.log('Rolls required:', rollCount);
-    console.log('Match:', match)
-    console.log("Times each number was rolled:", data);
+    console.log('Match:', match);
+    console.log('Times each number was rolled:', data);
     rollsAnalysis(data);
 }
 
