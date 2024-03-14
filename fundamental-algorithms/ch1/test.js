@@ -1,10 +1,6 @@
-function addDigits(number) {
-    let digitString = number.toString();
-    let sum = 0;
-    for (const digit in digitString) {
-        sum += parseInt(digitString[digit]);
-    }
-    return sum
-}
+let a = 123
 
-console.log(addDigits(567));
+let stringify = a.toString()[a.toString().length - 1];
+// let lastDigit = stringify[stringify.length - 1]
+
+console.log(stringify);
