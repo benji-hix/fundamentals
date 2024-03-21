@@ -6,9 +6,7 @@
 function rawMap(fn, arr) {
     const newArr = [];
     for (const item of arr) {
-        if (item) {
             newArr.push(fn(item));
-        }
     }
     return newArr;
 }
@@ -17,4 +15,12 @@ function addTwo(n) {
     return (n + 2)
 }
 
-console.log(rawMap(addTwo, [1, 2, 3]));
+const testArr = [1, 2, undefined, 3];
+
+console.log(rawMap(addTwo, testArr));
+
+const changedArr = testArr.map((n) => n + 2)
+
+console.log(changedArr);
+
+console.log(testArr.map(addTwo));
