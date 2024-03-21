@@ -33,3 +33,7 @@ function add(x, y) {
 const testArr = [1, 2, 3, 4]
 
 console.log(rawReduce(add, testArr, 5));
+
+const changedArr = testArr.reduce(((nextElement, reducedValue) => nextElement * reducedValue));
+
+console.log(changedArr);
