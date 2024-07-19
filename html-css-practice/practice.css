@@ -26,17 +26,13 @@ h1 {
     color: #8c3a35;
     color: #99332E;
 }
-.container1 {
+.text-block {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: 1rem;
-}
-.text-block {
+    left: 0;
+    right: 0;
+    margin-inline: auto;
     border: 1px solid #241F22;
     padding: 4rem;
     padding-bottom: 3rem;
