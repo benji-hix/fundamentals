@@ -9,13 +9,13 @@ body {
     color: #e8e1e0;
 }
 p {
-    font-size: 0.8125rem;
+    font-family: objektiv-mk3, sans-serif;
+    /* font-size: 0.8125rem; */
     font-size: .9rem;
     line-height: 1.375rem;
     letter-spacing: 0.5px;
     margin-bottom: 1rem;
     font-weight: 300;
-    font-family: objektiv-mk3, sans-serif;
 }
 h1 {
     font-family: minerva-modern, sans-serif;
